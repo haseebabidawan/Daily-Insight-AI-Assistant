@@ -1,6 +1,5 @@
 import streamlit as st
 from functions import quotes , random_image,temp_city,get_news, news_summarizer,smart_plan
-GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 
 st.set_page_config(
     page_title="Daily Insight AI Assistant",
