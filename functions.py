@@ -1,14 +1,14 @@
 import random
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 from google import genai
 from google.genai import types
 import requests
 import datetime
 
-load_dotenv()
+GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 
-api_key = os.getenv("GOOGLE_API_KEY")
+api_key = GOOGLE_API_KEY
 
 client = genai.Client(api_key=api_key)
 
