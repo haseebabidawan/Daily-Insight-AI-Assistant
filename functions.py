@@ -11,7 +11,8 @@ GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 
 api_key = GOOGLE_API_KEY
 
-client = genai.Client(api_key=api_key)
+# client = genai.Client(api_key=api_key)
+genai.configure(api_key=api_key)
 
 def quotes():
     quotes_list = [
