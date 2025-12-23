@@ -84,11 +84,11 @@ def temp_city(city):
     6. If any field is missing, gracefully ignore it.
     
     """
-   model = genai.GenerativeModel(
-    model_name="gemini-2.5-flash",
-        system_instruction=system_instructions,
-        tools=[get_weather]
-    )
+    model = genai.GenerativeModel(
+        model_name="gemini-2.5-flash",
+            system_instruction=system_instructions,
+            tools=[get_weather]
+        )
     
     response = model.generate_content(
         f"Generate a clear, friendly weather report with temperatures in °C, "
