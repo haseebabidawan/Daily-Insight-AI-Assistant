@@ -1,8 +1,7 @@
 import random
 import os
 # from dotenv import load_dotenv
-# import google.generativeai as genai
-from google import genai
+import google.generativeai as genai
 from google.generativeai import types
 import requests
 import datetime
