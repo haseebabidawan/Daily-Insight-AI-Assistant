@@ -5,6 +5,7 @@ import google.generativeai as genai
 from google.generativeai import types
 import requests
 import datetime
+import streamlit as st
 
 GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 
