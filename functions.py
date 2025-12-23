@@ -84,11 +84,23 @@ def temp_city(city):
     6. If any field is missing, gracefully ignore it.
     
     """
-    response = client.models.generate_content(
-        model = "gemini-2.5-flash",
-        contents=f"Generate a clear, friendly weather report with temperatures in °C, humidity, wind, sunrise/sunset for the {city} and practical suggestions on what to wear or carry.",
-        config=types.GenerateContentConfig(system_instruction=system_instructions,tools=[get_weather])
+   model = genai.GenerativeModel(
+    model_name="gemini-2.5-flash",
+        system_instruction=system_instructions,
+        tools=[get_weather]
+    )
+    
+    response = model.generate_content(
+        f"Generate a clear, friendly weather report with temperatures in °C, "
+        f"humidity, wind, sunrise/sunset for {city} and practical suggestions "
+        f"on what to wear or carry."
         )
+    
+    # response = client.models.generate_content(
+    #     model = "gemini-2.5-flash",
+    #     contents=f"Generate a clear, friendly weather report with temperatures in °C, humidity, wind, sunrise/sunset for the {city} and practical suggestions on what to wear or carry.",
+    #     config=types.GenerateContentConfig(system_instruction=system_instructions,tools=[get_weather])
+    #     )
     return(response.candidates[0].content.parts[0].text)
 
 
